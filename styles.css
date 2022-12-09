@@ -164,6 +164,7 @@ select {
 .letter-spacing-3 { letter-spacing: 2.35px; } 
 
 .uppercase { text-transform: uppercase; }
+.no-border { border: none; }
 
 .fs-900 { font-size: var(--fs-900); }
 .fs-800 { font-size: var(--fs-800); }
@@ -238,19 +239,25 @@ select {
   margin: 0;
 }
 
-.underline-indicators a {
+.underline-indicators a,
+.underline-indicators button {
   display: inline-block;
   text-decoration: none;
   padding: var(--underline-gap, 1rem) 0;
   margin-right: var(--underline-margin, 1rem)
+
 }
 
-.underline-indicators a.active {
+.underline-indicators a.active,
+.underline-indicators button[aria-selected="true"] {
   border-bottom: solid hsl( var(--clr-white) ) 3px;
+  color: solid hsl( var(--clr-white) ) 3px;
 }
 
 .underline-indicators a:focus,
-.underline-indicators a:hover {
+.underline-indicators a:hover,
+.underline-indicators button:focus,
+.underline-indicators button:hover {
   border-bottom: solid hsl(var(--clr-grey)) 3px;
 }
 

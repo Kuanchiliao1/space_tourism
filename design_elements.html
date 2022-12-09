@@ -16,20 +16,34 @@
 </head>
 <body>
   <!-- Navigation -->
-  <div>
-    <nav>
-        <ul class="primary-navigation underline-indicators flex" style="--gap: 4rem">
-            <li><a class="text-white active ff-sans-cond uppercase" href="#"><span class="numbered-float">01</span>Active</a>
-            <li><a class="text-white ff-sans-cond uppercase" href="#"><span class="numbered-float">02</span>Hovered</a>
-            <li><a class="text-white ff-sans-cond uppercase" href="#"><span class="numbered-float">03</span>Idle</a>
-        </ul>
-    </nav>
-  </div>
-  <!-- Explore button -->
-  <div style="display: flex">
-      <a class="large-button fs-600 text-dark bg-white ff-serif letter-spacing-3 uppercase">Explore</a>
-
+  <div class="container">
+    <div>
+      <nav>
+          <ul class="primary-navigation underline-indicators flex" style="--gap: 4rem">
+              <li><a class="text-white active ff-sans-cond uppercase" href="#"><span class="numbered-float">01</span>Active</a>
+              <li><a class="text-white ff-sans-cond uppercase" href="#"><span class="numbered-float">02</span>Hovered</a>
+              <li><a class="text-white ff-sans-cond uppercase" href="#"><span class="numbered-float">03</span>Idle</a>
+          </ul>
+      </nav>
     </div>
+    <!-- Explore button -->
+    <div style="display: flex">
+        <div style="margin-top: 5rem"><a class="large-button fs-600 text-dark bg-white ff-serif letter-spacing-3 uppercase">Explore</a></div>
+        <div style="margin-bottom: 50vh">
+          <!-- Tabs -->
+          <div class="underline-indicators">
+              <button aria-selected="true" class="bg-dark uppercase ff-sans-cond text-accent no-border active">Moon</button>
+              <button aria-selected="false" class="bg-dark uppercase ff-sans-cond text-accent no-border">Mars</button>
+              <button aria-selected="false" class="bg-dark uppercase ff-sans-cond text-accent no-border">Europa</button>
+          </div>
+    
+          <!-- Dots -->
+    
+    
+          <!-- Numbers -->
+      </div>
+      </div>
+  </div>
 
   <script>
   </script>
