@@ -240,16 +240,18 @@ select {
 }
 
 .underline-indicators a,
-.underline-indicators button {
+.underline-indicators button,
+.dot-indicators button {
+  cursor: pointer;
   display: inline-block;
   text-decoration: none;
   padding: var(--underline-gap, 1rem) 0;
   margin-right: var(--underline-margin, 1rem)
-
 }
 
 .underline-indicators a.active,
-.underline-indicators button[aria-selected="true"] {
+.underline-indicators button[aria-selected="true"]
+ {
   border-bottom: solid hsl( var(--clr-white) ) 3px;
   color: solid hsl( var(--clr-white) ) 3px;
 }
@@ -264,4 +266,24 @@ select {
 .numbered-float {
   margin-right: 1em;
   font-weight: 700;
+}
+
+.dot-indicators > button {
+  cursor: pointer;
+  opacity: .17;
+  padding: .4em;
+  border-radius: 50%;
+  border: none;
+}
+
+.dot-indicators > button[aria-selected="true"] {
+  background-color: hsl( var(--clr-white) );
+  opacity: 1;
+}
+
+.dot-indicators button:focus,
+.dot-indicators button:hover {
+  color: red;
+  background-color: hsl(var(--clr-grey));
+  opacity: .5;
 }
