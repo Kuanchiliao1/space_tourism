@@ -159,6 +159,7 @@ select {
 .ff-sans-cond { font-family: var(--ff-sans-cond); } 
 .ff-sans-normal { font-family: var(--ff-sans-normal); } 
 
+.letter-spacing-0 { letter-spacing: 0px; } 
 .letter-spacing-1 { letter-spacing: 4.75px; } 
 .letter-spacing-2 { letter-spacing: 2.7px; } 
 .letter-spacing-3 { letter-spacing: 2.35px; } 
@@ -203,7 +204,7 @@ select {
 
 .large-button {
   position: relative;
-  display: grid;
+  display: inline-grid;
   place-content: center;
   padding: 0 2em;
   border-radius: 50%;
@@ -234,6 +235,7 @@ select {
   /* Note: the variables defined here can be accessed in the selector below */
   --underline-margin: 2rem;
   --underline-gap: 2rem;
+  justify-content: flex-end;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -246,7 +248,8 @@ select {
   display: inline-block;
   text-decoration: none;
   padding: var(--underline-gap, 1rem) 0;
-  margin-right: var(--underline-margin, 1rem)
+  margin-right: var(--underline-margin, 1rem);
+  border-bottom: 3px hsl( var(--clr-dark) ) solid;
 }
 
 .underline-indicators a.active,
@@ -311,4 +314,9 @@ select {
   background-color: hsl( var(--clr-white) );
   opacity: 1;
   color:hsl( var(--clr-dark) );
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
 }
