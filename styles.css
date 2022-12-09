@@ -7,6 +7,8 @@
   --clr-dark: 230 35% 7%;
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
+  --clr-grey: 0, 0%, 59%;
+
 
   /* font-sizes */
   /* Note: we use rem because that doesnt override user settings like px would */
@@ -225,4 +227,34 @@ select {
 .large-button:hover::after {
   background-color: hsl( var(--clr-white) / .45);
   transform: scale(1.5);
+}
+
+.primary-navigation {
+  /* Note: the variables defined here can be accessed in the selector below */
+  --underline-margin: 2rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.underline-indicators a {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--underline-gap, 1rem) 0;
+  margin-right: var(--underline-margin, 1rem)
+}
+
+.underline-indicators a.active {
+  border-bottom: solid hsl( var(--clr-white) ) 3px;
+}
+
+.underline-indicators a:focus,
+.underline-indicators a:hover {
+  border-bottom: solid hsl(var(--clr-grey)) 3px;
+}
+
+.numbered-float {
+  margin-right: 1em;
+  font-weight: 700;
 }
