@@ -271,6 +271,7 @@ select {
 .dot-indicators > button {
   cursor: pointer;
   opacity: .17;
+  aspect-ratio: 1;
   padding: .4em;
   border-radius: 50%;
   border: none;
@@ -283,7 +284,31 @@ select {
 
 .dot-indicators button:focus,
 .dot-indicators button:hover {
-  color: red;
   background-color: hsl(var(--clr-grey));
   opacity: .5;
+}
+
+.number-indicators button {
+  cursor: pointer;
+  color: white;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1;
+  padding: 0 1em;
+  border-radius: 50%;
+  border: hsl(var(--clr-grey)) 1px solid;
+}
+
+.number-indicators button:focus,
+.number-indicators button:hover,
+.number-indicators button:hover[aria-selected="true"]{
+  border: white 2px solid;
+  color: white;
+  background-color: hsl (var(--clr-dark, red));
+}
+
+.number-indicators button[aria-selected="true"] {
+  background-color: hsl( var(--clr-white) );
+  opacity: 1;
+  color:hsl( var(--clr-dark) );
 }
