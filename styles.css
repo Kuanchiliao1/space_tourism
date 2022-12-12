@@ -15,7 +15,7 @@
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
   --fs-600: 1rem;
-  --fs-500: 1.75rem;
+  --fs-500: 1rem;
   --fs-400: 0.9375rem;
   --fs-300: 1rem;
   --fs-200: 0.875rem;
@@ -31,16 +31,18 @@
     --fs-800: 5rem;
     --fs-700: 2.5rem;
     --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
     --fs-400: 1rem;
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   :root {
     /* Note: we use rem because that doesnt override user settings like px would */
     --fs-800: 6.25rem;
     --fs-700: 3.5rem;
     --fs-600: 2rem;
+    --fs-500: 1.75rem;
     --fs-400: 1.125rem;
   }
 }
@@ -96,7 +98,7 @@ body {
 
 /* make images easier to work with */
 img,
-picutre {
+picture {
     max-width: 100%;
     display: block;
 }
@@ -137,6 +139,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 /* Note: gives items inside container a margin between themselves, but no margin adjacent to the container
 :where is used bc it has less specificity and will be easier to override */
 .flow > *:where(:not(:first-child)) {
@@ -152,18 +158,42 @@ select {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
+  border: solid pink 5px;
+  grid-template:
+  auto
+  1fr
+  5em
+  / 1.5em 1fr 1.5em;
 }
 
-@media(min-width: 45em) {
+.grid-container * {
+  max-width: 50ch;
+  place-items: center;
+}
+
+@media (min-width: 40em) {
   .grid-container {
-    grid-template-columns: minmax(2rem, 1fr) minmax(0, 40rem) minmax(0, 40rem) minmax(2rem, 1fr);
+        grid-template:
+    auto
+    2em
+    1fr
+    5em
+    / 3em 1fr 3em;
+  }
+}
+
+@media(min-width: 767px) {
+  .grid-container {
+    text-align: left;
+    grid-template-columns: minmax(4rem, 1fr) minmax(0, 40rem) minmax(0, 40rem) minmax(2rem, 1fr);
     column-gap: var(--container-gap, 2rem);
     border: solid blue 5px;
   }
 
   .grid-container > *:first-child {
     grid-column: 2 / auto;
+    grid-row: 3;
+    align-self: end;
   }
   
   .grid-container > *:last-child {
@@ -359,4 +389,24 @@ select {
 .primary-header {
   justify-content: space-between;
   align-items: center;
+}
+
+.grid-item-content {
+  grid-column: 2 / -2;
+  text-align: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item-button {
+  grid-column: 2 / -2;
+  grid-row-end: -2;
+  justify-self: center;
+  align-self: end;
+}
+
+h1 span {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
