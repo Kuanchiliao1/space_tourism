@@ -297,9 +297,16 @@ select {
   transform: scale(1.5);
 }
 
+/* Primary */
+
+.logo {
+  margin: 2rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
 .primary-navigation {
   /* Note: the variables defined here can be accessed in the selector below */
   --underline-gap: 2rem;
+  --gap: clamp(1rem, 3vw, 3.5rem);
   padding: 0;
   margin: 0;
   background: hsl( var(--clr-dark) / 0.95);
@@ -352,6 +359,64 @@ select {
     width: 1.5rem;
     aspect-ratio: 1;
     border: 0;
+  }
+}
+
+.primary-header {
+  justify-content: space-between;
+  align-items: start;
+}
+
+@media (min-width: 560px) {
+  .primary-navigation {
+    padding-inline: clamp(2.25rem, 10vw, 6rem);
+  }
+}
+
+@media (min-width: 560px) and (max-width: 767px) {
+  .numbered-float {
+    display: none;
+  }
+
+  .large-button {
+    margin-top: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  img.logo {
+    margin: 3em 4em;
+  }
+
+  .primary-header::before {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin-right: -3em;
+    background: hsl( var(--clr-white) / .25);
+    order: 1;
+    z-index: 10
+  }
+
+  .primary-navigation-container {
+    order: 1
+  }
+
+  .primary-header {
+    align-items: center;
+    position: relative;
+  }
+
+  /* .primary-navigation {
+    padding-inline: 4rem;
+  } */
+
+  .underline-indicators a, 
+  .underline-indicators button, 
+  .dot-indicators button {
+    --underline-gap: 2rem;
   }
 }
 
@@ -428,11 +493,6 @@ select {
   background-color: hsl( var(--clr-white) );
   opacity: 1;
   color:hsl( var(--clr-dark) );
-}
-
-.primary-header {
-  justify-content: space-between;
-  align-items: center;
 }
 
 .grid-item-content {
