@@ -176,7 +176,7 @@ select {
     text-align: left;
     grid-template-columns: minmax(4rem, 1fr) minmax(0, 40rem) minmax(0, 40rem) minmax(2rem, 1fr);
     grid-template-rows:
-    auto 2em 1fr 5em;
+    auto 2em 1fr 7em;
     column-gap: var(--container-gap, 2rem);
   }
 
@@ -207,6 +207,21 @@ select {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+.skip-to-main {
+  position: absolute;
+  z-index: 9999;
+  background: hsl( var(--clr-white) );
+  color: hsl( var(--clr-dark) );
+  padding: .5em 1em;
+  margin-inline: auto;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-main:focus {
+  transform: translateY(0);
 }
 
 /* colors */
