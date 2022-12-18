@@ -1,37 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Space tourism website</title>
-</head>
-<body>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Space tourism website</title>
+  </head>
+  <body class="destination">
+    <a class="skip-to-main" href="#main">Skip to Main</a> 
+    <header class="primary-header flex">
+      <div class="logo-container">
+        <img src="assets/shared/logo.svg" alt="logo" class="logo" />
+      </div>
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
+      <div class="hamburger-menu primary-navigation-container">
+        <nav>
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation underline-indicators flex"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="text-white ff-sans-cond uppercase letter-spacing-3"
+                ><span class="numbered-float" aria-hidden="true">00</span>Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="destination.html"
+                class="text-white ff-sans-cond uppercase letter-spacing-3"
+                ><span class="numbered-float" aria-hidden="true">01</span>Destination</a
+              >
+            </li>
+            <li>
+              <a
+                href="crew.html"
+                class="text-white ff-sans-cond uppercase letter-spacing-3"
+                ><span class="numbered-float" aria-hidden="true">02</span>Crew</a
+              >
+            </li>
+            <li>
+              <a
+                href="technology.html"
+                class="text-white ff-sans-cond uppercase letter-spacing-3"
+                ><span class="numbered-float" aria-hidden="true">03</span>Technology</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  01 Pick your destination
+    <main class="grid-container grid-container--destination" id="main" style="text-align: center;">
+      <h1 class="title--destination fs-500 uppercase ff-sans-cond letter-spacing-2" id="title--destination"><span class="numbered-float--destination">01</span> Pick your destination</h1>
+      <img class="img--destination" src="/assets/destination/image-moon.webp" alt="Moon">
+      <nav class="nav--destination" id="test" style="display: block;">
+        <ul
+          id="secondary-navigation"
+          data-visible="false"
+          class="secondary-navigation underline-indicators flex"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="text-white ff-sans-cond uppercase letter-spacing-3 active"
+              ><span class="numbered-float" aria-hidden="true">00</span>Moon</a
+            >
+          </li>
+          <li>
+            <a
+              href="destination.html"
+              class="text-white ff-sans-cond uppercase letter-spacing-3"
+              ><span class="numbered-float" aria-hidden="true">01</span>Mars</a
+            >
+          </li>
+          <li>
+            <a
+              href="crew.html"
+              class="text-white ff-sans-cond uppercase letter-spacing-3"
+              ><span class="numbered-float" aria-hidden="true">02</span>Europa</a
+            >
+          </li>
+          <li>
+            <a
+              href="technology.html"
+              class="text-white ff-sans-cond uppercase letter-spacing-3"
+              ><span class="numbered-float" aria-hidden="true">03</span>Titan</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <article class="destination-info">
+        <h2 class="fs-800 uppercase ff-serif">Moon</h2>
+        <p class="text-accent content--destination">
+          See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+          regain perspective and come back refreshed. While you’re there, take in some history
+          by visiting the Luna 2 and Apollo 11 landing sites.
+        </p>
+        <div class="flex destination-meta">
+          <div>
+            <p class="text-accent ff-sans-cond fs-400 letter-spacing-2 uppercase">
+              Avg. distance
+              <span class="d-block ff-serif fs-700 text-white">384,400 km</span>
+            </p>
+          </div>
+          <div>
+            <p class="text-accent ff-sans-cond fs-400 letter-spacing-2 uppercase">
+              Est. travel time
+              <span class="d-block ff-serif fs-700 text-white">3 days</span>
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
 
-  Moon
-  Mars
-  Europa
-  Titan
 
-  Moon
-
-  See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
-  regain perspective and come back refreshed. While you’re there, take in some history 
-  by visiting the Luna 2 and Apollo 11 landing sites.
-
-  Avg. distance
-  384,400 km
-
-  Est. travel time
-  3 days
 </body>
 </html>
