@@ -145,6 +145,12 @@ select {
   display: block;
 }
 
+.d-none {
+  display: none;
+}
+
+[hidden] { display: none !important; }
+
 /* Note: gives items inside container a margin between themselves, but no margin adjacent to the container
 :where is used bc it has less specificity and will be easier to override */
 .flow > *:where(:not(:first-child)) {
@@ -597,13 +603,13 @@ body {
 
 /* DESTINATION */
 
-.home {
+.destination {
   background-image: url(assets/destination/background-destination-mobile.jpg);
 }
 
 /* Tablet */
 @media(min-width: 560px) {
-  .home {
+  .destination {
     background-position: center center;
     background-image: url(assets/destination/background-destination-tablet.jpg);
   }
@@ -611,20 +617,20 @@ body {
 
 /* Desktop */
 @media (min-width: 1000px) {
-  .home {
+  .destination {
     background-image: url(assets/destination/background-destination-desktop.jpg);
   }
 }
 
 /* CREW */
 
-.home {
+.crew {
   background-image: url(assets/crew/background-crew-mobile.jpg);
 }
 
 /* Tablet */
 @media(min-width: 560px) {
-  .home {
+  .crew {
     background-position: center center;
     background-image: url(assets/crew/background-crew-tablet.jpg);
   }
@@ -632,7 +638,7 @@ body {
 
 /* Desktop */
 @media (min-width: 1000px) {
-  .home {
+  .crew {
     background-image: url(assets/crew/background-crew-desktop.jpg);
   }
 }
@@ -740,7 +746,7 @@ article.destination-info {
 }
 
 .grid-container--crew > .dot-indicators {
-  grid-area: dots
+  grid-area: dots;
 }
 
 
@@ -776,9 +782,6 @@ article.destination-info {
 
   .grid-container--crew > .img--crew {
     align-self: end;
-    /* max-width: 60%; */
-    /* height: 100%; */
-    /* object-fit: contain; */
   }
 }
 
@@ -860,15 +863,6 @@ article.destination-info {
     border-bottom: hsl( var(--clr-white) / .1) solid 1px;
   }
 
-  /* .grid-container--crew > .content--crew {
-    grid-area: name;
-
-  }
-
-  .grid-container--crew > img {
-    grid-area: img;
-
-  } */
   .grid-container--crew > .content--crew {
     text-align: left;
     align-self: center;

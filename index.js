@@ -3,7 +3,6 @@ const navToggle = document.querySelector(".mobile-nav-toggle")
 
 navToggle.addEventListener("click", function() {
   if (hamburgerMenu.getAttribute("data-visible") == "false") {
-    // close it
     hamburgerMenu.setAttribute("data-visible", "true")
     hamburgerMenu.setAttribute("aria-expanded", "true")
     
@@ -18,4 +17,3 @@ navToggle.addEventListener("click", function() {
     navToggle.style.backgroundImage = `url("assets/shared/icon-hamburger.svg")`;
   }
 });
-
