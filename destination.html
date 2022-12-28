@@ -74,7 +74,7 @@
 
     <main class="grid-container grid-container--destination" id="main" style="text-align: center;">
       <h1 class="title--destination fs-500 uppercase ff-sans-cond letter-spacing-2" id="title--destination"><span class="numbered-float--destination">01</span> Pick your destination</h1>
-      <img class="img--destination" src="/assets/destination/image-moon.webp" alt="Moon">
+      <img class="img--destination active" src="/assets/destination/image-moon.webp" alt="Moon">
       <img hidden class="img--destination" src="/assets/destination/image-mars.webp" alt="Mars">
       <img hidden class="img--destination" src="/assets/destination/image-europa.webp" alt="Europa">
       <img hidden class="img--destination" src="/assets/destination/image-titan.webp" alt="Titan">
@@ -83,11 +83,16 @@
           id="secondary-navigation"
           data-visible="false"
           class="secondary-navigation underline-indicators flex"
+          role="tablist"
+          aria-label="destination list"
         >
           <li>
             <a
               href="index.html"
               class="text-white ff-sans-cond uppercase letter-spacing-3 active"
+              tab-index="0"
+              aria-controls="moon-tab"
+              role="tab"
               ><span class="numbered-float numbered-float--destination" aria-hidden="true">00</span>Moon</a
             >
           </li>
@@ -95,6 +100,9 @@
             <a
               href="destination.html"
               class="text-white ff-sans-cond uppercase letter-spacing-3"
+              tab-index="-1"
+              aria-controls="mars-tab"
+              role="tab"
               ><span class="numbered-float numbered-float--destination" aria-hidden="true">01</span>Mars</a
             >
           </li>
@@ -102,6 +110,9 @@
             <a
               href="crew.html"
               class="text-white ff-sans-cond uppercase letter-spacing-3"
+              tab-index="-1"
+              aria-controls="europa-tab"
+              role="tab"
               ><span class="numbered-float numbered-float--destination" aria-hidden="true">02</span>Europa</a
             >
           </li>
@@ -109,13 +120,16 @@
             <a
               href="technology.html"
               class="text-white ff-sans-cond uppercase letter-spacing-3"
+              tab-index="-1"
+              aria-controls="titan-tab"
+              role="tab"
               ><span class="numbered-float numbered-float--destination" aria-hidden="true">03</span>Titan</a
             >
           </li>
         </ul>
       </nav>
       <!-- MOON -->
-      <article class="destination-info">
+      <article id="moon-tab" tab-index="0" class="destination-info">
         <h2 class="fs-800 uppercase ff-serif">Moon</h2>
         <p class="text-accent content--destination">
           See our planet as you’ve never seen it before. A perfect relaxing trip away to help
@@ -138,7 +152,7 @@
         </div>
       </article>
       <!-- MARS -->
-      <article hidden class="destination-info">
+      <article hidden id="mars-tab" tab-index="0" class="destination-info">
         <h2 class="fs-800 uppercase ff-serif">Mars</h2>
         <p class="text-accent content--destination">
           Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
@@ -161,7 +175,7 @@
         </div>
       </article>
       <!-- EUROPA -->
-      <article hidden class="destination-info">
+      <article hidden id="europa-tab" tab-index="0" class="destination-info">
         <h2 class="fs-800 uppercase ff-serif">Europa</h2>
         <p class="text-accent content--destination">
           The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
@@ -185,7 +199,7 @@
         </div>
       </article>
       <!-- TITAN -->
-      <article hidden class="destination-info">
+      <article hidden id="titan-tab" tab-index="0" class="destination-info">
         <h2 class="fs-800 uppercase ff-serif">Titan</h2>
         <p class="text-accent content--destination">
           The only moon known to have a dense atmosphere other than Earth, Titan 
