@@ -19,6 +19,8 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="navigation.js" defer></script>
+    <script src="tabs.js" defer></script>
     <title>Frontend Mentor | Space tourism website</title>
   </head>
   <body class="destination">
@@ -76,7 +78,7 @@
       <img hidden class="img--destination" src="/assets/destination/image-mars.webp" alt="Mars">
       <img hidden class="img--destination" src="/assets/destination/image-europa.webp" alt="Europa">
       <img hidden class="img--destination" src="/assets/destination/image-titan.webp" alt="Titan">
-      <nav hidden class="nav--destination" id="test" style="display: block;">
+      <nav class="nav--destination" id="test" style="display: block;">
         <ul
           id="secondary-navigation"
           data-visible="false"
@@ -206,7 +208,5 @@
         </div>
       </article>
     </main>
-
-
 </body>
 </html>
