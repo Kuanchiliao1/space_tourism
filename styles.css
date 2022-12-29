@@ -717,20 +717,6 @@ article.destination-info {
   display: block;
 }
 
-.grid-container--crew > .img--crew::after {
-  content: "laskfjasldf";
-  position: absolute;
-  z-index: 10000;
-  display: block;
-  top: 0;
-  left: 0;
-  background: red;
-  color: red;
-  width: 300px;
-  height: 300px;
-  border: 5px solid pink !important;
-}
-
 .grid-container--crew > .content--crew {
   grid-area: article;
   text-align: center;
@@ -895,4 +881,7 @@ article.destination-info {
   }
 }
 
+[role=tab]:focus {
+  outline: limegreen 2px solid;
+}
 
