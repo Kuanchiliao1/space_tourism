@@ -19,6 +19,8 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="navigation.js" defer></script>
+    <script src="tabs.js" defer></script>
     <title>Frontend Mentor | Space tourism website</title>
   </head>
 <body class="crew"></body>
@@ -53,7 +55,7 @@
         </li>
         <li>
           <a
-            href="crew-commander.html"
+            href="crew.html"
             class="text-white ff-sans-cond uppercase letter-spacing-3"
             ><span class="numbered-float" aria-hidden="true">02</span>Crew</a
           >
@@ -73,7 +75,7 @@
     <h1 class="title--destination fs-500 uppercase ff-sans-cond letter-spacing-2" id="title--destination"><span class="numbered-float--crew">02</span> Meet your crew</h1>
 
     <!-- COMMANDER -->
-    <h2 class="member-name--crew uppercase ff-serif fs-600">
+    <h2 id="commander-tab" class="member-name--crew uppercase ff-serif fs-600">
       Commander
       <span class="name-only--crew ff-serif fs-700 text-white">Douglas Hurley</span>
     </h2>
@@ -83,7 +85,7 @@
       commander of Crew Dragon Demo-2.
     </p>
     <!-- MISSION SPECIALIST -->
-    <h2 hidden class="member-name--crew uppercase ff-serif fs-600">
+    <h2 id="specialist-tab" hidden class="member-name--crew uppercase ff-serif fs-600">
       Mission Specialist
       <span class="name-only--crew ff-serif fs-700 text-white">Mark Shuttleworth</span>
     </h2>
@@ -91,7 +93,7 @@
       Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.
     </p>
     <!-- PILOT -->
-    <h2 hidden class="member-name--crew uppercase ff-serif fs-600">
+    <h2 id="pilot-tab" hidden class="member-name--crew uppercase ff-serif fs-600">
       Pilot
       <span class="name-only--crew ff-serif fs-700 text-white">Victor Glover</span>
     </h2>
@@ -99,7 +101,7 @@
       Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer. 
     </p>
     <!-- FLIGHT ENGINEER -->
-    <h2 hidden class="member-name--crew uppercase ff-serif fs-600">
+    <h2 id="engineer-tab" hidden class="member-name--crew uppercase ff-serif fs-600">
       Flight Engineer
       <span class="name-only--crew ff-serif fs-700 text-white">Anousheh Ansari</span>
     </h2>
@@ -109,16 +111,28 @@
 
 
 
-    <div class="dot-indicators d-flex">
-      <button aria-controls="" aria-selected="true"><span class="sr-only">The commander</span></button>
-      <button aria-controls="" aria-selected="false"><span class="sr-only">The mission specialist</span></button>
-      <button aria-controls="" aria-selected="false"><span class="sr-only">The pilot</span></button>
-      <button aria-controls="" aria-selected="false"><span class="sr-only">The crew engineer</span></button>
+    <div class="dot-indicators d-flex" role="tablist" aria-label="crew member list">
+      <button aria-controls="commander-tab" aria-selected="true"
+      role="tab"
+      tabindex="0"
+      data-image="commander-image"><span class="sr-only">The commander</span></button>
+      <button aria-controls="specialist-tab" aria-selected="false"
+      role="tab"
+      tabindex="-1"
+      data-image="specialist-image"><span class="sr-only">The mission specialist</span></button>
+      <button aria-controls="pilot-tab" aria-selected="false"
+      role="tab"
+      tabindex="-1"
+      data-image="pilot-image"><span class="sr-only">The pilot</span></button>
+      <button aria-controls="engineer-tab" aria-selected="false"
+      role="tab"
+      tabindex="-1"
+      data-image="engineer-image"><span class="sr-only">The crew engineer</span></button>
     </div>
-    <img class="img--crew" src="./assets/crew/image-douglas-hurley.png" alt="Commander">
-    <img hidden class="img--crew" src="./assets/crew/image-mark-shuttleworth.png" alt="Commander">
-    <img hidden class="img--crew" src="./assets/crew/image-victor-glover.png" alt="Commander">
-    <img hidden class="img--crew" src="./assets/crew/image-anousheh-ansari.png" alt="Commander">
+    <img id="commander-image" class="img--crew" src="./assets/crew/image-douglas-hurley.png" alt="Commander">
+    <img hidden id="specialist-image" class="img--crew" src="./assets/crew/image-mark-shuttleworth.png" alt="Commander">
+    <img hidden id="pilot-image" class="img--crew" src="./assets/crew/image-victor-glover.png" alt="Commander">
+    <img hidden id="engineer-image" class="img--crew" src="./assets/crew/image-anousheh-ansari.png" alt="Commander">
   </main>
 </body>
 </html>

@@ -671,7 +671,7 @@ body {
   ". dots ." min-content
   ". name ." min-content
   ". article ." auto
-  / 2.5em 1fr 2.5em;
+  / 1.5em 1fr 1.5em;
   justify-items: center;
   row-gap: 1.75em;
 }
@@ -728,7 +728,7 @@ article.destination-info {
   grid-column: 2 / -2;
   grid-row-end: -2;
   justify-self: center;
-  align-self: end;
+  align-self: center;
 }
 
 .grid-container--crew .img--crew,
@@ -838,6 +838,10 @@ article.destination-info {
     grid-column-start: 3;
   }
 
+  .grid-container.homepage .grid-item-button {
+    align-self: end;
+  }
+
   .grid-container--destination {
     justify-items: start;
     align-items: start;
@@ -852,9 +856,9 @@ article.destination-info {
   .grid-container--crew {
     grid-template:
     ". title img" 1fr
-    ". name img" 1fr
+    ". name img" auto
     ". article img" 1fr
-    ". dots img" 1fr
+    ". dots img" 25%
     / 8.8em calc(50% - 8.8em) 1fr;
     gap: 0;
     justify-items: start;
