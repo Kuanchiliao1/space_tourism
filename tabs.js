@@ -1,7 +1,9 @@
 const tabList = document.querySelector('[role="tablist"]')
 const tabs = document.querySelectorAll('[role="tab"]') // Need to select tabs
 const articles = document.querySelectorAll('article')
-const images = document.querySelectorAll('.img--destination')
+const crewHeaders = document.querySelectorAll('main > h2')
+const crewContents = document.querySelectorAll('main > p')
+const images = document.querySelectorAll('.img--destination, .img--crew')
 
 let tabFocus = 0;
 tabList.addEventListener('keydown', changeTabFocus);
@@ -13,11 +15,9 @@ tabs.forEach((tab) => {
 function changeTabFocus(e) {
   const keydownLeft = 37;
   const keydownRight = 39;
-
   
   if (e.keyCode === keydownLeft || e.keyCode === keydownRight) {
     tabs[tabFocus].setAttribute("tabindex", -1)
-
     if (e.keyCode === keydownRight) {
       tabFocus++
     } else {
@@ -30,8 +30,6 @@ function changeTabFocus(e) {
       tabFocus = tabFocus % tabs.length
     };
   }
-  
-  
 
   tabs[tabFocus].setAttribute("tabindex", 0)
   tabs[tabFocus].focus()
@@ -42,20 +40,35 @@ function changeTabPanel(e) {
   const targetIndex = [...tabs].indexOf(targetTab)
   const targetArticle = articles[targetIndex]
   const targetImage = images[targetIndex]
+  const targetHeader = crewHeaders[targetIndex]
+  const targetContent = crewContents[targetIndex]
   
   tabs.forEach((tab, index) => {
     tab.classList.remove("active")
     tab.ariaSelected = "false"
     tab.tabIndex = -1
 
-    articles[index].hidden = true
+    if (articles.length !== 0) {
+      articles[index].hidden = true
+    } else {
+      crewHeaders[index].hidden = true
+      crewContents[index].hidden = true
+    }
+
     images[index].hidden = true
   })
   
   targetTab.classList.toggle("active")
   targetTab.ariaSelected = "true"
   targetTab.tabIndex = 0
-  targetArticle.hidden = false
+  console.log(targetTab)
+
+  if (articles.length !== 0) {
+    targetArticle.hidden = false
+  } else {
+    targetHeader.hidden = false
+    targetContent.hidden = false
+  }
   targetImage.hidden = false
 }
 
