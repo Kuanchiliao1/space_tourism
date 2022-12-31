@@ -528,15 +528,16 @@ select {
   border: none;
 }
 
-.dot-indicators > button[aria-selected="true"] {
-  background-color: hsl( var(--clr-white) );
-  opacity: 1;
-}
 
 .dot-indicators button:focus,
 .dot-indicators button:hover {
   background-color: hsl(var(--clr-grey));
   opacity: .5;
+}
+
+.dot-indicators > button[aria-selected="true"] {
+  background-color: hsl( var(--clr-white) );
+  opacity: 1;
 }
 
 .number-indicators button {
@@ -638,6 +639,17 @@ body {
   .crew {
     background-image: url(assets/crew/background-crew-desktop.jpg);
   }
+
+  .image--technology {
+    background-image: url(./assets/technology/image-launch-vehicle-portrait.jpg);
+    aspect-ratio: 1;
+    background-size: cover;
+    min-width: 100%;
+  }
+
+  .grid-container--technology img.image--technology {
+    visibility: hidden;
+  }
 }
 
 /* Layout */
@@ -727,8 +739,8 @@ article.destination-info {
   display: block;
 }
 
-.grid-container--technology .image--technology {
-  min-width: 100%;
+.grid-container--technology img.image--technology {
+  min-width: calc(100% + 4em);
 }
 
 .grid-container--crew .content--crew,
@@ -851,8 +863,8 @@ article.destination-info {
   .grid-container--technology {
     padding: 2em 0 4em 9em;
     grid-template:
-    "title ." min-content
-    "article img" min-content
+    "title img" min-content
+    "article img"
     / 60% 40%;
   }
 
@@ -860,12 +872,25 @@ article.destination-info {
     grid-area: article;
     flex-direction: column;
     justify-self: start;
+    align-self: start;
+    margin: 0;
   }
 
   .grid-container--technology article {
     grid-area: article;
-    width: 80%;
-    
+    width: 70%;
+    justify-self: end;
+    margin-right: 3em;
+    margin-top: -.4em;
+  }
+
+  .grid-container--technology h1 {
+    align-self: start;
+    justify-self: start;
+  }
+
+  .grid-container--technology article {
+    text-align: start;
   }
 
   .grid-container--destination > img {
