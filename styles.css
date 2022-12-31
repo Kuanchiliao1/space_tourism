@@ -92,9 +92,8 @@ body {
     background-color: hsl( var(--clr-dark) );
     line-height: 1.5;
     min-height: 100vh;
-
-    display: grid;
     grid-template-rows: min-content 1fr;
+    display: grid;
     overflow-x: hidden;
 }
 
@@ -554,9 +553,7 @@ select {
 .number-indicators button:focus,
 .number-indicators button:hover,
 .number-indicators button:hover[aria-selected="true"]{
-  border: white 2px solid;
-  color: white;
-  background-color: hsl (var(--clr-dark, red));
+  border: white 1px solid;
 }
 
 .number-indicators button[aria-selected="true"] {
@@ -667,6 +664,18 @@ body {
   row-gap: 1.75em;
 }
 
+.grid-container--technology {
+  display: grid;
+  padding-inline: 1.5em;
+  padding-bottom: 4em;
+  grid-template:
+  "title" min-content
+  "img" min-content
+  "dots" min-content
+  "article";
+  place-items: center;
+}
+
 h1.title--destination {
   grid-area: title;
 }
@@ -710,31 +719,54 @@ article.destination-info {
   align-self: end;
 }
 
-.grid-container--crew > .img--crew {
+.grid-container--crew .img--crew,
+.grid-container--technology .image--technology {
   position: relative;
   grid-area: img;
   max-width: 50%;
   display: block;
 }
 
-.grid-container--crew > .content--crew {
+.grid-container--technology .image--technology {
+  min-width: 100%;
+}
+
+.grid-container--crew .content--crew,
+.grid-container--technology article {
   grid-area: article;
   text-align: center;
 }
 
-.grid-container--crew > h1 {
+.grid-container--technology article p {
+  margin-top: 2em;
+}
+
+.grid-container--technology article {
+  align-self: start;
+}
+
+.grid-container--crew h1,
+.grid-container--technology h1 {
   grid-area: title;
 }
 
-.grid-container--crew > .member-name--crew {
+.grid-container--technology h1 {
+  margin-bottom: 3em;
+}
+
+.grid-container--crew .member-name--crew {
   grid-area: name;
   text-align: center;
 }
 
-.grid-container--crew > .dot-indicators {
+.grid-container--crew .dot-indicators,
+.grid-container--technology > .number-indicators {
   grid-area: dots;
 }
 
+.grid-container--technology > .number-indicators {
+  margin: 2em 0 2em 0;
+}
 
 .grid-container * {
   max-width: clamp(50ch, 60ch, 100ch);
@@ -760,7 +792,7 @@ article.destination-info {
     grid-template:
     ". title ." min-content
     ". name ." min-content
-    ". article ." min-content
+    ". article ." 6.25rem
     ". dots ." min-content
     ". img ." 1fr
     / 2.5em 1fr 2.5em;
@@ -814,6 +846,26 @@ article.destination-info {
     / 8.8em calc(50% - 8.8em) 1fr;
     gap: 0;
     justify-items: start;
+  }
+
+  .grid-container--technology {
+    padding: 2em 0 4em 9em;
+    grid-template:
+    "title ." min-content
+    "article img" min-content
+    / 60% 40%;
+  }
+
+  .grid-container--technology .number-indicators {
+    grid-area: article;
+    flex-direction: column;
+    justify-self: start;
+  }
+
+  .grid-container--technology article {
+    grid-area: article;
+    width: 80%;
+    
   }
 
   .grid-container--destination > img {
