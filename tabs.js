@@ -3,7 +3,7 @@ const tabs = document.querySelectorAll('[role="tab"]') // Need to select tabs
 const articles = document.querySelectorAll('article')
 const crewHeaders = document.querySelectorAll('main > h2')
 const crewContents = document.querySelectorAll('main > p')
-const images = document.querySelectorAll('.img--destination, .img--crew')
+const images = document.querySelectorAll('.img--destination, .img--crew, .image--technology')
 
 let tabFocus = 0;
 tabList.addEventListener('keydown', changeTabFocus);
@@ -61,7 +61,7 @@ function changeTabPanel(e) {
   targetTab.classList.toggle("active")
   targetTab.ariaSelected = "true"
   targetTab.tabIndex = 0
-  console.log(targetTab)
+  console.log(articles)
 
   if (articles.length !== 0) {
     targetArticle.hidden = false
