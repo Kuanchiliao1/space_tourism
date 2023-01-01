@@ -442,6 +442,8 @@ select {
   #secondary-navigation a{
     --underline-gap: .5rem;
   }
+
+
 }
 
 @media (min-width: 1000px) {
@@ -764,6 +766,8 @@ article.destination-info {
 
 .grid-container--technology h1 {
   margin-bottom: 3em;
+  margin-left: clamp(0rem, 5vw, 1.5rem);
+  justify-self: start;
 }
 
 .grid-container--crew .member-name--crew {
