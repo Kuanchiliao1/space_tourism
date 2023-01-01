@@ -75,7 +75,7 @@
     <main class="grid-container--technology" id="main" style="text-align: center;">
       <h1 class="fs-500 uppercase ff-sans-cond letter-spacing-2" id="title--destination"><span class="numbered-float--crew">03</span> Space launch 101</h1>
       <!-- LAUNCH VEHICLE -->
-      <article>
+      <article id="vehicle-tab" tabindex="0">
         <h2 id="commander-tab" class="text-accent ff-sans-cond uppercase letter-spacing-3">
           The terminology...
           <span class="name-only--crew ff-serif fs-700 text-white">Launch vehicle</span>
@@ -85,7 +85,7 @@
         </p>
       </article>
       <!-- SPACEPORT -->
-      <article hidden>
+      <article hidden id="spaceport-tab" tabindex="-1">
         <h2 id="commander-tab" class="text-accent ff-sans-cond uppercase letter-spacing-3">
           The terminology...
           <span class="name-only--crew ff-serif fs-700 text-white">Spaceport</span>
@@ -95,7 +95,7 @@
         </p>
       </article>
       <!-- SPACE CAPSULE -->
-      <article hidden>
+      <article hidden id="capsule-tab" tabindex="-1">
         <h2 id="commander-tab" class="text-accent ff-sans-cond uppercase letter-spacing-3">
           The terminology...
           <span class="name-only--crew ff-serif fs-700 text-white">Space capsule</span>
@@ -108,20 +108,29 @@
         </p>
       </article>
 
-      <div class="number-indicators flex" style="--gap: 1rem">
-        <button aria-selected="true" class="bg-dark fs-600 ff-serif">1</button>
-        <button aria-selected="false" class="bg-dark fs-600 ff-serif">2</button>
-        <button aria-selected="false" class="bg-dark fs-600 ff-serif">3</button>
+      <div class="number-indicators flex" role="tablist" aria-label="space launch list" style="--gap: 1rem">
+        <button
+        aria-controls="vehicle-tab"
+        role="tab"
+        tabindex="0"
+        aria-selected="true" class="bg-dark fs-600 ff-serif">1</button>
+        <button
+        aria-controls="spaceport-tab"
+        role="tab"
+        tabindex="-1"
+        aria-selected="false" class="bg-dark fs-600 ff-serif">2</button>
+        <button
+        aria-controls="capsule-tab"
+        role="tab"
+        tabindex="-1"
+        aria-selected="false" class="bg-dark fs-600 ff-serif">3</button>
       </div>
 
       <img class="image--technology" src="./assets/technology/image-launch-vehicle-landscape.jpg" alt="">
-      <img hidden src="./assets/technology/image-spaceport-landscape.jpg" alt="">
-      <img hidden src="./assets/technology/image-space-capsule-landscape.jpg" alt="">
+      <img hidden class="image--technology" src="./assets/technology/image-spaceport-landscape.jpg" alt="">
+      <img hidden class="image--technology" src="./assets/technology/image-space-capsule-landscape.jpg" alt="">
 
-      <img hidden class="image--technology" src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="">
       <div class="image--technology"></div>
-      <img hidden src="./assets/technology/image-spaceport-portrait.jpg" alt="">
-      <img hidden src="./assets/technology/image-space-capsule-portrait.jpg" alt="">
 
       <!-- <article hidden id="titan-tab" tabindex="0" class="destination-info">
         <h2 class="fs-800 uppercase ff-serif">Titan</h2>
