@@ -4,6 +4,7 @@ const articles = document.querySelectorAll('article')
 const crewHeaders = document.querySelectorAll('main > h2')
 const crewContents = document.querySelectorAll('main > p')
 const images = document.querySelectorAll('.img--destination, .img--crew, .image--technology')
+const techImages = document.querySelectorAll(".div-image--technology")
 
 let tabFocus = 0;
 tabList.addEventListener('keydown', changeTabFocus);
@@ -40,6 +41,7 @@ function changeTabPanel(e) {
   const targetIndex = [...tabs].indexOf(targetTab)
   const targetArticle = articles[targetIndex]
   const targetImage = images[targetIndex]
+  const targetTechImage = techImages[targetIndex]
   const targetHeader = crewHeaders[targetIndex]
   const targetContent = crewContents[targetIndex]
   
@@ -56,12 +58,15 @@ function changeTabPanel(e) {
     }
 
     images[index].hidden = true
+
+    if (techImages.length !== 0) {
+      techImages[index].hidden = true
+    }
   })
   
   targetTab.classList.toggle("active")
   targetTab.ariaSelected = "true"
   targetTab.tabIndex = 0
-  console.log(articles)
 
   if (articles.length !== 0) {
     targetArticle.hidden = false
@@ -70,6 +75,10 @@ function changeTabPanel(e) {
     targetContent.hidden = false
   }
   targetImage.hidden = false
+  
+  if (techImages.length !== 0) {
+    targetTechImage.hidden = false
+  }
 }
 
 
