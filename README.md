@@ -1,4 +1,4 @@
-*[Live site](https://kuanchiliao1.github.io/space_tourism/)*
+**[Live site](https://kuanchiliao1.github.io/space_tourism/)**
 # Description:
 This is a multipage Space Tourism project from Scrimba and Frontend mentor. I was heavily encouraged to come up with my own solutions and most of the code is my own. I made a lot of decisions that were different than the instructor Kevin and I kept them. This lead me to regret some of those decisions later on...
 
@@ -6,7 +6,7 @@ For example, instead of using Kevin's grid template that worked for most layouts
 
 ## What I learned
 - Grid layouts should be thought out with respect to every screen size on the design file, do not work on them seperately
-- Lots of accessibility features, including sr-only utility class, skip-to-content, and tab indexes 
+- Lots of modern accessibility features, including sr-only utility class, skip-to-content, and tab indices 
 - How a tab system might be implemented in JS
 - How to keep things tidy with good class naming conventions
 
