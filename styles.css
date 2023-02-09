@@ -434,6 +434,14 @@ select {
     margin-bottom: 2em;
     border-bottom: hsl(var(--clr-white) / 0.1) solid 1px;
   }
+
+  h1.title--destination {
+    margin-bottom: 2.5em;
+  }
+
+  p.content--destination {
+    margin-inline: 2em;
+  }
 }
 
 .primary-header {
@@ -998,6 +1006,7 @@ article.destination-info {
 
   h1.title--destination {
     justify-self: start;
+    margin-left: 2.5em;
   }
 
   article.destination-info {
