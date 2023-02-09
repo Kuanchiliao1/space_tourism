@@ -36,7 +36,7 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   :root {
     /* Note: we use rem because that doesnt override user settings like px would */
     --fs-800: 6.25rem;
@@ -278,6 +278,9 @@ select {
   line-height: 1.1;
 }
 
+/* END OF UTILITY CLASSES */
+/* Typography */
+
 .numbered-title {
   font-family: var(--ff-sans-cond);
   font-size: var(--fs-500);
@@ -302,7 +305,7 @@ select {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .content--crew {
     line-height: 2;
   }
@@ -392,7 +395,7 @@ select {
     position: fixed;
     inset: 0 0 0 25%;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 1024;
     backdrop-filter: blur(17px);
 
     list-style: none;
@@ -444,7 +447,7 @@ select {
   }
 }
 
-@media (min-width: 560px) and (max-width: 1000px) {
+@media (min-width: 560px) and (max-width: 1024px) {
   .numbered-float {
     display: none;
   }
@@ -494,7 +497,7 @@ select {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   img.logo {
     margin: 3em 4em;
   }
@@ -617,7 +620,7 @@ h1 span {
 }
 
 /* ------------------- */
-/* Page specific       */
+/* PAGE SPECIFIC       */
 /* ------------------- */
 
 body {
@@ -626,7 +629,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* HOME */
+/* HOME BACKGROUND */
 
 .home {
   background-image: url(assets/home/background-home-mobile.jpg);
@@ -647,7 +650,7 @@ body {
   }
 }
 
-/* DESTINATION */
+/* DESTINATION BACKGROUND */
 
 .destination {
   background-image: url(assets/destination/background-destination-mobile.jpg);
@@ -662,13 +665,13 @@ body {
 }
 
 /* Desktop */
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .destination {
     background-image: url(assets/destination/background-destination-desktop.jpg);
   }
 }
 
-/* CREW */
+/* CREW BACKGROUND */
 
 .crew {
   background-image: url(assets/crew/background-crew-mobile.jpg);
@@ -684,14 +687,14 @@ body {
 
 /* Desktop */
 
-@media (min-width 1000px) {
+@media (min-width: 1024px) {
   .crew {
     background-position: center center;
     background-image: url(assets/crew/background-crew-desktop.jpg);
   }
 }
 
-/* TECHNOLOGY */
+/* TECHNOLOGY BACKGROUND */
 
 .technology {
   background-image: url(assets/technology/background-technology-mobile.jpg);
@@ -706,14 +709,14 @@ body {
 }
 
 /* Desktop */
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .technology {
     background-image: url(assets/technology/background-technology-desktop.jpg);
   }
 }
 
 /* Desktop */
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .crew {
     background-image: url(assets/crew/background-crew-desktop.jpg);
   }
@@ -774,7 +777,7 @@ body {
     "title" min-content
     "img" min-content
     "dots" min-content
-    "article";
+    "article" auto;
   place-items: center;
 }
 
@@ -908,7 +911,7 @@ article.destination-info {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .grid-container,
   .grid-container.homepage {
     text-align: left;
